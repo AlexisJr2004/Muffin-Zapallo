@@ -15,182 +15,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <link rel="icon" href="/img/logo.png" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
-<style>
-body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text x="0" y="24" font-size="24">🧁</text></svg>'), auto;
-}
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.float-animation {
-    animation: float 6s ease-in-out infinite;
-}
-
-.gradient-text {
-    background: linear-gradient(45deg, #3B82F6, #8B5CF6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.nav-link {
-    position: relative;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 50%;
-    background: linear-gradient(90deg, #f63bbb, #8B5CF6);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-.nav-link:hover::after {
-    width: 70%;
-}
-
-.mobile-menu {
-    transition: transform 0.3s ease-in-out;
-}
-
-.mobile-menu.hidden {
-    transform: translateX(-100%);
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fadeIn {
-    animation: fadeIn 0.5s ease forwards;
-}
-
-.gradient-bg {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
-}
-
-.input-focus-effect {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.input-focus-effect:focus {
-    transform: scale(1.01);
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
-}
-
-.floating-elements {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-20px) rotate(5deg);
-    }
-}
-
-.success-message {
-    transform: translateY(20px);
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
-.success-message.show {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.gradient-text {
-    background: linear-gradient(45deg, #3B82F6, #8B5CF6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.card {
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.tag {
-    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.hover-overlay {
-    transition: all 0.3s ease;
-}
-
-.card:hover .hover-overlay {
-    opacity: 1;
-}
-
-.image-zoom {
-    transition: transform 0.3s ease;
-}
-
-.card:hover .image-zoom {
-    transform: scale(1.05);
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}
-
-.float-animation {
-    animation: float 6s ease-in-out infinite;
-} 
-</style>
 <body>
     <!-- Navigation -->
     <section>
@@ -220,6 +48,9 @@ body {
                         </a>
                         <a href="#Informacion" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900">
                             Información
+                        </a>
+                        <a href="#Creadores" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900">
+                            Creadores
                         </a>
                     </div>
     
@@ -293,7 +124,14 @@ body {
                             <i class="fas fa-info-circle w-5 h-5 text-gray-500 mr-3 group-hover:text-blue-600"></i>
                             Información
                             </a>
-                        </li>                        
+                        </li>
+                        <li>
+                            <a href="#Creadores" 
+                            class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-lg group transition-colors">
+                            <i class="fas fa-user w-5 h-5 text-gray-500 mr-3 group-hover:text-blue-600"></i>
+                            Creadores
+                            </a>
+                        </li>                       
                     </ul>
                 </div>
             
@@ -392,7 +230,114 @@ body {
         </div>
     </header>
 
+    <!-- Objetivos -->
+    <section class="relative overflow-hidden">
+        <!-- Círculos difuminados decorativos -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            <div class="absolute top-32 -right-32 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        </div>
+    
+        <div class="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div class="flex flex-col items-center">
+                <div class="mb-6 inline-block rounded-full bg-gray-100/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold">
+                    🎯 Nuestros Objetivos
+                </div>
+
+                <h2 class="text-center text-3xl font-bold md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    <span class="gradient-text">¿Qué</span> queremos lograr?
+                </h2>
+
+                <p class="mb-8 mt-4 text-center text-base text-gray-600 max-w-xl">
+                    Conoce nuestrs Objetovos Generales y Principales con realición a elaborar nuestro producto
+                </p>
+            <div class="grid gap-8 lg:grid-cols-2 w-full max-w-6xl">
+              <!-- Objetivo General -->
+              <div class="card group bg-gradient-to-br from-white-50 to-blue-50 rounded-2xl overflow-hidden shadow-md p-8">
+                <div class="flex flex-col">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Objetivo General</h3>
+                  </div>
+                  <p class="text-justify text-gray-600 leading-relaxed">
+                    Desarrollar un muffin de zapallo con chispas de chocolate que combine propiedades nutricionales 
+                    beneficiosas con un sabor atractivo, asegurando su aceptación sensorial y viabilidad comercial 
+                    en el mercado de productos alimenticios saludables e innovadores.
+                  </p>
+                </div>
+              </div>
+    
+              <!-- Objetivos Específicos -->
+              <div class="card group bg-gradient-to-br from-white-50 to-green-50 rounded-2xl overflow-hidden shadow-md p-8">
+                <div class="flex flex-col">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="m8 12 3 3 6-6"/>
+                      </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Objetivos Específicos</h3>
+                  </div>
+                  <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                      <p class="text-justify text-gray-600">
+                        Formular una receta óptima que combine zapallo y chispas de chocolate, evaluando 
+                        la proporción adecuada de ingredientes para maximizar tanto las propiedades 
+                        nutricionales como el sabor del muffin.
+                      </p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                      <p class="text-justify text-gray-600">
+                        Realizar pruebas sensoriales para determinar el nivel de aceptación del producto 
+                        por parte de los consumidores, analizando aspectos como textura, sabor, apariencia 
+                        y aroma.
+                      </p>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                      <p class="text-justify text-gray-600">
+                        Evaluar la viabilidad comercial del muffin de zapallo con chispas de chocolate, 
+                        considerando costos de producción, estabilidad del producto y potencial de éxito 
+                        en el mercado de alimentos saludables e innovadores.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
     <!-- Precios -->
+    <div id="muffinModal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
+        <div class="modal-content bg-white rounded-2xl w-full max-w-xs sm:max-w-lg md:max-w-2xl mx-auto overflow-y-auto max-h-[90vh]">
+            <div class="relative">
+                <div id="modalContent" class="p-4 sm:p-6">
+                    <!-- Content will be injected here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="relative overflow-hidden">
         <!-- Círculos difuminados decorativos -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -419,9 +364,9 @@ body {
                         <div class="relative overflow-hidden">
                             <div class="aspect-w-16 aspect-h-12 overflow-hidden">
                                 <img src="https://cdn0.recetasgratis.net/es/posts/5/9/7/muffins_de_chocolate_con_chispas_60795_600.jpg" alt="Muffin de Chocolate"
-                                    class="image-zoom w-full h-64 object-cover" />
+                                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
                             </div>
-                            <div class="hover-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                                 <div class="absolute bottom-4 left-4 right-4">
                                     <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-blue-600/80">
                                         Más Vendido
@@ -451,7 +396,7 @@ body {
                                         <p class="text-xs text-gray-500">Repostera Principal</p>
                                     </div>
                                 </div>
-                                <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                <button onclick="openModal('chocolate')" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
                                     Ver Detalles →
                                 </button>
                             </div>
@@ -462,9 +407,9 @@ body {
                         <div class="relative overflow-hidden">
                             <div class="aspect-w-16 aspect-h-12 overflow-hidden">
                                 <img src="https://lepasteleria.com/wp-content/uploads/media/muffins-de-vainilla/muffins-de-vainilla-imagen-destacada.jpg" alt="Muffin de Vainilla"
-                                    class="image-zoom w-full h-64 object-cover" />
+                                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
                             </div>
-                            <div class="hover-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                                 <div class="absolute bottom-4 left-4 right-4">
                                     <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-purple-600/80">
                                         Nuevo
@@ -494,7 +439,7 @@ body {
                                         <p class="text-xs text-gray-500">Especialista</p>
                                     </div>
                                 </div>
-                                <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                <button onclick="openModal('vainilla')" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
                                     Ver Detalles →
                                 </button>
                             </div>
@@ -505,9 +450,9 @@ body {
                         <div class="relative overflow-hidden">
                             <div class="aspect-w-16 aspect-h-12 overflow-hidden">
                                 <img src="https://deliciaskitchen.b-cdn.net/wp-content/uploads/2022/02/muffins-de-arandanos-receta-facil-y-sana.jpg" alt="Muffin de Arándanos"
-                                    class="image-zoom w-full h-64 object-cover" />
+                                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110" />
                             </div>
-                            <div class="hover-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                                 <div class="absolute bottom-4 left-4 right-4">
                                     <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-green-600/80">
                                         Saludable
@@ -537,7 +482,7 @@ body {
                                         <p class="text-xs text-gray-500">Pastelera</p>
                                     </div>
                                 </div>
-                                <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                <button onclick="openModal('arandanos')" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
                                     Ver Detalles →
                                 </button>
                             </div>
@@ -670,7 +615,7 @@ body {
                         <span class="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-300 text-white flex items-center justify-center mr-4 transform group-hover:scale-110 transition-transform duration-300">5</span>
                         <div class="flex-1">
                             <h3 class="font-semibold text-lg mb-2 text-orange-600">Horneado</h3>
-                            <p class="text-gray-600">IVierte en moldes y hornea a 170°C por 20 minutos o hasta que al insertar un palillo salga limpio.</p>
+                            <p class="text-gray-600">Vierte en moldes y hornea a 170°C por 20 minutos o hasta que al insertar un palillo salga limpio.</p>
                             <span class="text-sm bg-orange-100 text-orange-600 px-3 py-1 rounded-full mt-2 inline-block">⏱️ 20 minutos</span>
                         </div>
                     </li>
@@ -864,7 +809,122 @@ body {
             </div>
         </div>
     </section>
- 
+
+    <!-- Creadores del producto -->
+    <section class="relative overflow-hidden">
+        <div id="Creadores" class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            <div class="absolute top-32 -right-32 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        </div>
+    
+        <div id="Autores" class="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24">
+            <div class="flex flex-col items-center">
+                <div class="mb-6 inline-block rounded-full bg-gray-100/80 backdrop-blur-sm px-4 py-1.5 text-sm font-semibold">
+                    👩‍🎓 Nuestros Autores
+                </div>
+    
+                <h2 class="text-center text-3xl font-bold md:text-5xl bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                    <span class="gradient-text">Conoce</span> a Nuestro Equipo
+                </h2>
+    
+                <p class="mb-8 mt-4 text-center text-base text-gray-600 max-w-xl">
+                    Estudiantes de Ingeniería en Alimentos comprometidos con la innovación y el desarrollo de productos saludables.
+                </p>
+    
+                <div class="grid gap-8 sm:grid-cols-2 w-full mb-12">
+                    <div class="card group bg-white rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                                <img src="/img/equipo_trabajo.png" alt="Erika Guadalupe" 
+                                    class="image-zoom w-full h-64 object-cover"/>
+                            </div>
+                            <div class="hover-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-orange-600/80">
+                                        Autora Principal
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold">DESARROLLADORA</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300"></span>
+                                <span class="text-sm text-gray-500">Ing. Alimentos</span>
+                            </div>
+                            
+                            <h3 class="mb-4 text-xl font-bold text-gray-900">Erika Rosalia Guadalupe Vera</h3>
+                            <p class="mb-6 text-base text-gray-600">
+                                Estudiante apasionada por el desarrollo de productos innovadores y saludables.
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-orange-200 flex items-center justify-center text-orange-600 font-bold">
+                                        EG
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900">UNEMI</p>
+                                        <p class="text-xs text-gray-500">Milagro, Ecuador</p>
+                                    </div>
+                                </div>
+                                <a href="mailto:erika.guadalupe@unemi.edu.ec" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                    Contactar →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="card group bg-white rounded-2xl overflow-hidden shadow-md">
+                        <div class="relative overflow-hidden">
+                            <div class="aspect-w-16 aspect-h-12 overflow-hidden">
+                                <img src="/img/equipo_trabajo.png" alt="Eimy Paez" 
+                                    class="image-zoom w-full h-64 object-cover"/>
+                            </div>
+                            <div class="hover-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity">
+                                <div class="absolute bottom-4 left-4 right-4">
+                                    <span class="text-white text-sm font-medium px-3 py-1 rounded-full bg-yellow-600/80">
+                                        Co-Autora
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag text-sm font-semibold">DESARROLLADORA</span>
+                                <span class="h-1 w-1 rounded-full bg-gray-300"></span>
+                                <span class="text-sm text-gray-500">Ing. Alimentos</span>
+                            </div>
+                            
+                            <h3 class="mb-4 text-xl font-bold text-gray-900">Eimy Daniela Paez Bassante</h3>
+                            <p class="mb-6 text-base text-gray-600">
+                                Investigadora dedicada a la creación de alternativas alimenticias innovadoras.
+                            </p>
+                            
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-yellow-200 flex items-center justify-center text-yellow-600 font-bold">
+                                        EP
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900">UNEMI</p>
+                                        <p class="text-xs text-gray-500">Milagro, Ecuador</p>
+                                    </div>
+                                </div>
+                                <a href="mailto:eimy.paez@unemi.edu.ec" class="text-blue-600 hover:text-blue-700 font-medium text-sm">
+                                    Contactar →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Llamado a la acción -->
     <section class="relative overflow-hidden">
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 relative z-10">
@@ -929,7 +989,7 @@ body {
             </div>
         </div>
     </section>
-
+                                              
     <!-- Footer -->
     <footer class="bg-gray-50">
         <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
@@ -1052,149 +1112,7 @@ body {
     </div>
 
 </body>
-<!-- <script src="/main.js"></script> -->
- <script>
-    gsap.from(".gradient-text", {
-    duration: 1,
-    y: 50,
-    opacity: 0,
-    ease: "power3.out"
-});
 
-gsap.from("p", {
-    duration: 1,
-    y: 30,
-    opacity: 0,
-    stagger: 0.2,
-    ease: "power3.out"
-});
+<script src="/main.js"></script>
 
-// Animación de entrada para los elementos del navbar
-gsap.from("nav", {
-    duration: 1,
-    y: -100,
-    opacity: 0,
-    ease: "power3.out"
-});
-
-gsap.from(".nav-link", {
-    duration: 0.5,
-    y: -20,
-    opacity: 0,
-    stagger: 0.1,
-    ease: "power3.out",
-    delay: 0.5
-});
-
-// Inicializar los íconos de Feather
-feather.replace();
-
-// Datos de ingredientes base (para 12 porciones)
-const ingredientesBase = [
-    { nombre: 'harina', cantidad: 200, unidad: 'gr' },
-    { nombre: 'polvo de hornear', cantidad: 1, unidad: 'cdita' },
-    { nombre: 'bicarbonato', cantidad: 0.5, unidad: 'cdita' },
-    { nombre: 'canela', cantidad: 1.5, unidad: 'cdita' },
-    { nombre: 'jengibre', cantidad: 0.25, unidad: 'cdita' },
-    { nombre: 'huevos', cantidad: 3, unidad: '' },
-    { nombre: 'azúcar blanca', cantidad: 100, unidad: 'gr' },
-    { nombre: 'azúcar morena', cantidad: 100, unidad: 'gr' },
-    { nombre: 'puré de calabaza', cantidad: 180, unidad: 'gr' },
-    { nombre: 'aceite', cantidad: 100, unidad: 'ml' },
-];
-
-// Función para actualizar los ingredientes según las porciones
-function actualizarIngredientes(porciones) {
-    const lista = document.getElementById('ingredientesList');
-    lista.innerHTML = '';
-
-    ingredientesBase.forEach(ingrediente => {
-        const cantidadAjustada = (ingrediente.cantidad * porciones / 12).toFixed(1);
-        const li = document.createElement('li');
-        li.className = 'flex justify-between items-center border-b border-gray-100 py-2';
-        li.innerHTML = `
-            <span class="capitalize">${ingrediente.nombre}</span>
-            <span class="font-medium">${cantidadAjustada} ${ingrediente.unidad}</span>
-        `;
-        lista.appendChild(li);
-    });
-}
-
-// Evento para el cambio de porciones
-document.getElementById('porcionesSelect').addEventListener('change', (e) => {
-    actualizarIngredientes(Number(e.target.value));
-});
-
-// Inicializar con 12 porciones
-actualizarIngredientes(12);
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    window.addEventListener('scroll', function () {
-        var goTopBtn = document.getElementById('goTopBtn');
-        if (window.scrollY > 100) {
-            goTopBtn.classList.remove('translate-y-20');
-            goTopBtn.classList.remove('opacity-0');
-            goTopBtn.classList.add('translate-y-0');
-            goTopBtn.classList.add('opacity-100');
-        } else {
-            goTopBtn.classList.add('translate-y-20');
-            goTopBtn.classList.add('opacity-0');
-            goTopBtn.classList.remove('translate-y-0');
-            goTopBtn.classList.remove('opacity-100');
-        }
-    });
-
-    document.getElementById('goTopBtn').addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-});
-
-// Función para manejar el menú móvil y cambiar el ícono
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    mobileMenu.classList.toggle('hidden');
-    
-    // Cambiar icono a "X"
-    if (mobileMenu.classList.contains('hidden')) {
-        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>';
-    } else {
-        menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
-    }
-}
-
-// Cerrar menú al hacer clic en un enlace
-function closeMobileMenu() {
-    document.getElementById('mobile-menu').classList.add('hidden');
-    document.getElementById('menu-icon').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>';
-}
-
-// Cerrar menú al hacer clic fuera de él
-window.addEventListener('click', function(e) {
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuButton = document.getElementById('menu-button');
-    if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
-        closeMobileMenu();
-    }
-});
-
-// Función para manejar el efecto de blur en el scroll
-function handleScroll() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 0) {
-        navbar.classList.add('bg-white/70', 'backdrop-blur-md');
-        navbar.classList.remove('bg-white/0', 'backdrop-blur-0');
-    } else {
-        navbar.classList.remove('bg-white/70', 'backdrop-blur-md');
-        navbar.classList.add('bg-white/0', 'backdrop-blur-0');
-    }
-}
-
-// Agregar el evento de scroll
-window.addEventListener('scroll', handleScroll);
-
-// Llamar a handleScroll inicialmente para establecer el estado correcto
-handleScroll();
- </script>
 </html>

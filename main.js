@@ -140,3 +140,164 @@ window.addEventListener('scroll', handleScroll);
 
 // Llamar a handleScroll inicialmente para establecer el estado correcto
 handleScroll();
+
+const muffinsData = {
+    chocolate: {
+        name: "Muffin de Chocolate",
+        image: "https://cdn0.recetasgratis.net/es/posts/5/9/7/muffins_de_chocolate_con_chispas_60795_600.jpg",
+        chef: {
+            name: "Chef María",
+            role: "Repostera Principal",
+            image: "https://w7.pngwing.com/pngs/53/98/png-transparent-chef-s-uniform-french-cuisine-woman-restaurant-woman.png"
+        },
+        price: "$3.99",
+        ingredients: [
+            "Chocolate belga 70%",
+            "Harina de trigo",
+            "Huevos orgánicos",
+            "Azúcar morena",
+            "Mantequilla",
+            "Chispas de chocolate"
+        ],
+        nutrition: [
+            { label: "Calorías", value: "320 kcal" },
+            { label: "Proteínas", value: "5g" },
+            { label: "Carbohidratos", value: "42g" },
+            { label: "Grasas", value: "16g" }
+        ],
+        description: "Nuestro muffin de chocolate es elaborado con el mejor chocolate belga, siguiendo una receta tradicional que ha sido perfeccionada durante años. Cada bocado es una experiencia única que combina la suavidad de la masa con la intensidad del chocolate."
+    },
+    vainilla: {
+        name: "Muffin de Vainilla",
+        image: "https://lepasteleria.com/wp-content/uploads/media/muffins-de-vainilla/muffins-de-vainilla-imagen-destacada.jpg",
+        chef: {
+            name: "Chef Carlos",
+            role: "Especialista",
+            image: "https://w7.pngwing.com/pngs/220/390/png-transparent-man-wearing-chef-chef-s-uniform-cook-restaurant-food-chef-beer.png"
+        },
+        price: "$4.99",
+        ingredients: [
+            "Vainilla de Madagascar",
+            "Harina pastelera",
+            "Huevos de corral",
+            "Azúcar glass",
+            "Crema de leche",
+            "Extracto de vainilla"
+        ],
+        nutrition: [
+            { label: "Calorías", value: "280 kcal" },
+            { label: "Proteínas", value: "4g" },
+            { label: "Carbohidratos", value: "38g" },
+            { label: "Grasas", value: "14g" }
+        ],
+        description: "Un clásico reinventado con vainilla de Madagascar y una textura increíblemente suave. El interior cremoso y la cobertura de azúcar glass crean una combinación perfecta de sabores y texturas."
+    },
+    arandanos: {
+        name: "Muffin de Arándanos",
+        image: "https://deliciaskitchen.b-cdn.net/wp-content/uploads/2022/02/muffins-de-arandanos-receta-facil-y-sana.jpg",
+        chef: {
+            name: "Chef Ana",
+            role: "Pastelera",
+            image: "https://statics.lasinnovadoras.com/2023/11/crop/656473872ce7e__800x578.jpeg"
+        },
+        price: "$4.50",
+        ingredients: [
+            "Arándanos frescos",
+            "Harina integral",
+            "Miel orgánica",
+            "Aceite de coco",
+            "Ralladura de limón",
+            "Yogur natural"
+        ],
+        nutrition: [
+            { label: "Calorías", value: "220 kcal" },
+            { label: "Proteínas", value: "6g" },
+            { label: "Carbohidratos", value: "32g" },
+            { label: "Grasas", value: "10g" }
+        ],
+        description: "Una opción más saludable elaborada con harina integral y arándanos frescos de temporada. El toque de limón realza el sabor de los frutos y crea un equilibrio perfecto entre lo dulce y lo cítrico."
+    }
+};
+
+function openModal(muffinType) {
+    const modal = document.getElementById('muffinModal');
+    const modalContent = document.getElementById('modalContent');
+    const muffin = muffinsData[muffinType];
+    
+    modalContent.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <img src="${muffin.image}" alt="${muffin.name}"
+                     class="w-full h-64 object-cover rounded-lg shadow-md" />
+            </div>
+            
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-bold text-gray-900">${muffin.name}</h3>
+                    <span class="text-lg font-semibold text-blue-600">${muffin.price}</span>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-2">Ingredientes</h4>
+                    <ul class="list-disc pl-4 space-y-1">
+                        ${muffin.ingredients.map(ingredient => `
+                            <li class="text-gray-600">${ingredient}</li>
+                        `).join('')}
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-2">Información Nutricional</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        ${muffin.nutrition.map(item => `
+                            <div class="text-sm">
+                                <span class="font-medium">${item.label}:</span>
+                                <span class="text-gray-600">${item.value}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-2">Preparado por</h4>
+                    <div class="flex items-center gap-3">
+                        <img src="${muffin.chef.image}" alt="${muffin.chef.name}"
+                             class="w-12 h-12 rounded-full border-2 border-white shadow-sm" />
+                        <div>
+                            <p class="font-medium">${muffin.chef.name}</p>
+                            <p class="text-sm text-gray-600">${muffin.chef.role}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-6">
+            <h4 class="font-semibold text-lg mb-2">Descripción</h4>
+            <p class="text-gray-600">${muffin.description}</p>
+        </div>
+    `;
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('muffinModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+document.getElementById('muffinModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Cerrar modal con la tecla Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
