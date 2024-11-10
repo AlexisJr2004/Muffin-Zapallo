@@ -186,3 +186,82 @@ body {
 .modal.active .modal-content {
     transform: translateY(0);
 }
+
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 9999;
+  }
+
+  .loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    animation: rotate 3s linear infinite;
+  }
+
+  .circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff69b4;
+    transform-origin: 50px 50px;
+    animation: scale 1.5s ease-in-out infinite;
+  }
+
+  .circle:nth-child(1) { transform: rotate(0deg); }
+  .circle:nth-child(2) { transform: rotate(45deg); }
+  .circle:nth-child(3) { transform: rotate(90deg); }
+  .circle:nth-child(4) { transform: rotate(135deg); }
+  .circle:nth-child(5) { transform: rotate(180deg); }
+  .circle:nth-child(6) { transform: rotate(225deg); }
+  .circle:nth-child(7) { transform: rotate(270deg); }
+  .circle:nth-child(8) { transform: rotate(315deg); }
+
+  .cupcake {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .content.visible {
+    display: block;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scale {
+    0%, 100% {
+      transform-origin: 50px 50px;
+      transform: rotate(0) scale(1);
+    }
+    50% {
+      transform-origin: 50px 50px;
+      transform: rotate(0) scale(0.5);
+    }
+  }

@@ -300,4 +300,16 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeModal();
     }
+});    
+
+// Al cargar el DOM
+document.addEventListener('DOMContentLoaded', function() {
+  const loader = document.querySelector('.loader-wrapper');
+  const content = document.querySelector('.content');
+
+  setTimeout(function() {
+    loader.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    content.classList.add('visible');
+  }, 500);
 });
